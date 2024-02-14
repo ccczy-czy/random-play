@@ -1,0 +1,21 @@
+body {
+    background: #f0f0f0;
+    color: #333;
+}
+
+.main {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    width: 4rem;
+    height: 4rem;
+}
+
+button i {
+    font-size: 2rem;
+}
