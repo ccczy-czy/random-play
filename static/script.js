@@ -30,7 +30,18 @@ document.getElementById("recordBtn").onclick = function () {
   }
 };
 
-function playAudio(filename) {
-  const audio = new Audio(`/audio_files/${filename}`);
-  audio.play();
+function playAudio(fileList) {
+  // let files = JSON.parse(fileList); // Parse the JSON string into an array
+  let index = 0;
+
+  function playNextFile() {
+    if (index < fileList.length) {
+      const audio = new Audio(`/audio_files/${fileList[index]}`);
+      audio.play();
+      index++;
+      audio.onended = playNextFile; // Play the next file when this one ends
+    }
+  }
+
+  playNextFile(); // Start playing the first file
 }

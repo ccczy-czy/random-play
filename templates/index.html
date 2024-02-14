@@ -26,14 +26,15 @@
           <button id="recordBtn" class="btn btn-secondary mb-3">
             <i class="bi bi-record-circle"></i>
           </button>
-          {% for file in audio_files %}
+
+          {% if audio_files %}
           <button
             class="btn btn-secondary mb-3"
-            onclick="playAudio('{{ file }}')"
+            onclick="playAudio({{audio_files}})"
           >
             <i class="bi bi-play-circle"></i>
           </button>
-          {% endfor %}
+          {% endif %}
         </div>
       </div>
     </div>

@@ -7,6 +7,7 @@ from flask import (
     send_from_directory,
 )
 import os
+import random
 from datetime import datetime
 
 app = Flask(__name__)
@@ -21,7 +22,7 @@ def index():
     # List existing audio files
     audio_files = os.listdir(AUDIO_FOLDER)
     audio_files = [file for file in audio_files if file.endswith(".wav")]
-    print(audio_files)
+    # random.shuffle(audio_files)
     return render_template("index.html", audio_files=audio_files)
 
 
